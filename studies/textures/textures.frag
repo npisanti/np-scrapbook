@@ -122,10 +122,11 @@ void main(){
     //t = t*t*t*t*t*t;
     t = min( t, 1.0 );
     
-    float s = stroke( circle_sdf(vec2(st.x-0.1, st.y)), 0.6, 0.2, aa );
+    //float s = stroke( circle_sdf(vec2(st.x-0.1, st.y)), 0.6, 0.2, aa );
 
-    float a = t + s - 2.0*t*s; // invert by shape s
-    //float a = t*s;
+    //float a = t + s - 2.0*t*s; // invert by shape s
+    float a = t * 0.9;
+    
     
     vec3 color = vec3( 1.0, 0.5, 0.28 );
     vec3 white = vec3( 1.0 );

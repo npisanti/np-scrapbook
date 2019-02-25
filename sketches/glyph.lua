@@ -2,12 +2,6 @@
 ----------------------------------------------------
 function setup()
 
-    -- execyting bash command from pipe
-    local handle = io.popen( "figlet 'hello world' " )
-    local result = handle:read("*a")
-    -- print ( result ) 
-    handle:close()
-    
 end
 
 ----------------------------------------------------
@@ -22,10 +16,10 @@ function draw()
     mg.center()
     
     mg.strokeA()    
-    local offset = 0.1;
+    local offset = 0.1
     local side = 0.05
     mg.begin()
-        mg.poly( 0.0, 0.0, 0.15 + offset*3, 4 )
+        --mg.poly( 0.0, 0.0, 0.15 + offset*3, 4 )
     mg.close()
 
     for i=1,3 do 
