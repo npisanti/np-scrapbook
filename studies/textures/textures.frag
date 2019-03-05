@@ -7,11 +7,12 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-#pragma include "../np-fraglib.frag"
+#pragma include "../../libs/libshapes.frag"
+#pragma include "../../libs/libnoise.frag"
+#pragma include "../../libs/librandom.frag"
+#pragma include "../../libs/liblfo.frag"
 
 const float aa = 0.005;
-
-float rand( float i, float t ){ return rand(vec2(i,i), t); }
 
 float polymoire( vec2 st, int N, float spacing, float fatness, float speed ){
     vec2 rot = rotated( st, u_time*speed);

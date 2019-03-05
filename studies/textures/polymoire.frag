@@ -55,6 +55,6 @@ void main(){
     
     //t *= alpha;
 
-    gl_FragColor = vec4( u_color_a, t );
+    gl_FragColor = vec4( vec3(1.0), t );
 
 }

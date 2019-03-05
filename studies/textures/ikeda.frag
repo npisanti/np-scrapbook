@@ -53,7 +53,6 @@ void main(){
 	float gate = step( threshold, ran);
 	ran -= threshold;
 	ran /= (1.0-threshold);
-	vec3 color = u_color_a * gate * ran ;
-	
-	gl_FragColor = vec4(color,1.0);
+    
+	gl_FragColor = vec4( vec3(1.0), gate * ran);
 }

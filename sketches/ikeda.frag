@@ -24,14 +24,14 @@ float rand( in float i, in float t ){
 
 // changing this will change the speed of the different lines
 const float id = 7.0;
-const float threshold = 0.7;
+const float threshold = 0.8;
 
 void main(){
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
 
 	// for tiling you simply multiply the coordinates for an index
-	st.x *= 120.0; // cols
-	st.y *= 16.0;  // rows
+	st.x *= 70.0; // cols
+	st.y *= 6.0;  // rows
  
 	// get direction multiplier
 	float dir = step( mod(st.y, 2.0), 0.9999 );
@@ -47,7 +47,7 @@ void main(){
 	float gate = step( threshold, ran);
 	ran -= threshold;
 	ran /= (1.0-threshold);
-	vec3 color = vec3 (1.0, 0.2, 0.2) * gate * ran ;
+	vec3 color = vec3 (1.0 );
 	
-	gl_FragColor = vec4(color,1.0);
+	gl_FragColor = vec4(color, gate * ran);
 }

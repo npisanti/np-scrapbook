@@ -23,13 +23,13 @@ function draw()
     mg.close()
 
     for i=1,3 do 
-        mg.strokeA( lfo.triangle( 0.13 + i*0.019 ) * 255 )
+        mg.stroke( 255, lfo.triangle( 0.13 + i*0.019 ) * 255 )
         mg.begin()
             mg.poly( 0.0, offset*i,  side, 4 )
             mg.poly( 0.0, -offset*i, side, 4 )
         mg.close()
         
-        mg.strokeA( lfo.triangle( 0.2 + i*0.017 ) * 255 )
+        mg.stroke( 255, lfo.triangle( 0.2 + i*0.017 ) * 255 )
         mg.begin()
             mg.poly( offset*i, 0.0, side, 4 )
             mg.poly( -offset*i, 0.0, side, 4 )

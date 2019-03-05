@@ -1,8 +1,8 @@
 
 -- graphic parameters
-leafs = 32 -- must be even, try 26-34 range
+leafs = 26 -- must be even, try 26-34 range
 overlap = 0.0025
-ratio = 0.6
+ratio = 1.5
 
 -- export parameters
 justOutline = false

@@ -167,12 +167,12 @@ void main(){
     float t = noise( vec3( str*4.0, u_time*0.2 ) );
     float step0 = step( 0.01, t );
     float step1 = step( 0.25, t );
-    t = step1*0.9 + step0*0.9;
+    t = step1*0.8 + step0*0.8;
     
     vec3 color = vec3( 0.0 );
     
-    color = mix( color, u_color_b*u_control_b, step0 );
-    color = mix( color, u_color_a, step1 );
+    color = mix( color, u_color_b*0.5, step0 );
+    color = mix( color, vec3(1.0), step1 );
     
     gl_FragColor = vec4( color, 1.0 );
 
