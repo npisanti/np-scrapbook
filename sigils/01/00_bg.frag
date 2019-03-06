@@ -6,6 +6,7 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
+uniform vec3 u_color_a;
 uniform vec3 u_color_b;
 
 #pragma include "../../libs/libshapes.frag"
@@ -66,8 +67,8 @@ void main(){
     
     float a = t * 0.4;
     
-    vec3 color = vec3( 1.0, 0.5, 0.28 );
-    vec3 white = vec3( 1.0 );
-    gl_FragColor = vec4( u_color_b, a);  
-      
+    gl_FragColor = vec4( mix( vec3(0.0), u_color_b, a), t );  
+    
+    //gl_FragColor = vec4( u_color_b, a );  
+    //gl_FragColor = vec4( u_color_a, 0.0 );  
 }
