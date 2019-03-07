@@ -1,0 +1,14 @@
+{
+    "config": {
+        "webcam": {
+            "ID": "0",
+            "width": "640",
+            "height": "480",
+            "mode": "0"
+        },
+        "canvas": {
+            "width": "640",
+            "height": "480"
+        }
+    }
+}
