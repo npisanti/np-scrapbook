@@ -11,7 +11,7 @@ function draw()
     mg.center()
     
     mg.begin()
-        mg.circle( mg.noise(time, 0.0)-0.5, 0.0, 0.1 )
+        mg.circle( lfo.noise(0.9)-0.5, 0.0, 0.1 )
     mg.close()
 end
 
