@@ -19,9 +19,6 @@ float square( vec2 st, float side, float width ){
     side += width;
     float inner = step( side, st.x ) * step( side, st.y ) * step( st.x, 1.0-side ) * step( st.y, 1.0-side );
     
-    
-    //outer = step( st.y, 1.0-side );
-    // * step( st.x, 1.0-side ) * step( st.y, 1.0-side );
     return outer - inner;
 }
 

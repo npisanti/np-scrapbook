@@ -1,0 +1,49 @@
+
+#ifdef GL_ES
+precision mediump float;
+#endif
+
+#define PI 3.14159265359
+#define TWO_PI 6.28318530718
+
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+uniform float u_time;
+uniform float u_control_b;
+uniform sampler2D u_tex0;
+varying vec2 st;
+
+#pragma include "../../libs/libnoise.frag"
+#pragma include "../../libs/libshapes.frag"
+
+//uniform vec3 u_color_a;
+//uniform vec3 u_color_b;
+vec3 u_color_a = vec3( 0.8, 0.25, 0.1 );
+vec3 u_color_b = vec3( 1.0, 0.2, 0.2 );
+
+void main(){
+
+
+    float ratio = u_resolution.x / u_resolution.y;
+    vec2 str = st;
+    str.x *= ratio;
+
+    float age = u_time * 0.02;
+
+    float no = noise( vec3( str*1.0, age ) ) * 0.24 
+             + noise( vec3( str*2.0, age ) ) * 0.5
+             + noise( vec3( str*8.0, age ) ) * 0.04
+             + noise( vec3( str*30., age ) ) * 0.015
+             + noise( vec3( str*125.,age ) ) * 0.005;
+    
+    float w = 0.005;
+    
+    vec3 color = vec3( 0.0 );
+    color += u_color_a * stroke( no, 0.1, w ) * 0.5; 
+    color += u_color_a * stroke( no, 0.20, w ) * 0.75; 
+    color += u_color_b * stroke( no, 0.30, w ) * 0.9; 
+    color += u_color_b * stroke( no, 0.40, w ); 
+
+    gl_FragColor = vec4( color, 1.0 );
+
+}
