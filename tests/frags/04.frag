@@ -28,8 +28,8 @@ void main(){
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
 
     vec2 nt = st;
-    nt.x += noise( vec2( 0.0, u_time) )*0.02 ;   
-    nt.y += 0.01;
+    nt.x += noise( vec2( 0.0, u_time) )*0.01 ;   
+    nt.y += 0.005;
     
     vec4 z1 = texture2D( u_tex1, nt );
 
@@ -37,7 +37,7 @@ void main(){
     float a = stroke( s, 0.2, 0.1 );
     vec4 color = vec4( u_color_a * a, 1.0 );
 
-    color += z1 * 0.9;
+    color += z1 * 0.96;
     color.a = 1.0;
 
     gl_FragColor = color;

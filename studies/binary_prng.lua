@@ -1,11 +1,8 @@
 
 -- graphic parameters
-leafs = 26 -- must be even, try 26-34 range
-overlap = 0.0025
-ratio = 1.5
+segments = 26 -- must be even, try 26-34 range
 
 -- export parameters
-justOutline = false
 resolution = 1
 
 ----------------------------------------------------
@@ -16,48 +13,32 @@ end
 ----------------------------------------------------
 function draw()
 
-    local step = 1.0 / (leafs + 2.0)
+    local step = 1.0 / (segments + 4.0)
     local leafwidht = step*ratio
 
     mg.background( 255, 255, 255, 255 )
     
     -- horizontally center 
     mg.translate( mg.ratio()*0.5, 0.0 )
-    
-    -- do the rectangles
-    if not justOutline then
-        mg.fill( 0 )
-        
-        for i=1,leafs do 
-            local xoff = i%2 * leafwidht
-        
-            mg.begin()
-                mg.rect( -xoff, step*i, leafwidht, step )
-            mg.close()
-        end
-    end
 
     -- draws the outline 
-    mg.strokeWidth( overlap)
+    
+    mg.strokeWidth( 0.003 )
     mg.stroke( 0 )
-
     mg.begin()
-        mg.moveTo( 0, step )
-        mg.lineTo( -leafwidht, step )
-     
-        for i=2,leafs do           
+        for i=2, segments do           
             if i%2==0 then 
-                mg.lineTo( -leafwidht, step*i )
-                mg.lineTo( leafwidht, step*i )
-            else 
-                mg.lineTo( leafwidht, step*i )
-                mg.lineTo( -leafwidht, step*i )
+                mg.moveTo( 0.0, step*i )
+                local nexti = i + 1.0 
+                mg.lineTo(  0.0, step*nexti  )
             end
-        end       
-        
-        mg.lineTo( leafwidht, step*(leafs+1) )
-        mg.lineTo( 0.0, step*(leafs+1) )
-        mg.lineTo( 0.0, step )
+        end    
+    mg.close()
+    
+    mg.fill( 0 )
+    mg.begin()
+        local cradius = 0.005
+        mg.circle( 0, (segments+2.)*step + cradius*0.5, cradius )
     mg.close()
 
 end
