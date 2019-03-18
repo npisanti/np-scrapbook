@@ -23,18 +23,18 @@ vec3 u_color_b = vec3( 1.0, 0.2, 0.2 );
 
 void main(){
 
-
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    
     float ratio = u_resolution.x / u_resolution.y;
-    vec2 str = st;
-    str.x *= ratio;
+    st.x *= ratio;
 
     float age = u_time * 0.02;
 
-    float no = noise( vec3( str*1.0, age ) ) * 0.24 
-             + noise( vec3( str*2.0, age ) ) * 0.5
-             + noise( vec3( str*8.0, age ) ) * 0.04
-             + noise( vec3( str*30., age ) ) * 0.015
-             + noise( vec3( str*125.,age ) ) * 0.005;
+    float no = noise( vec3( st*1.0, age ) ) * 0.24 
+             + noise( vec3( st*2.0, age ) ) * 0.5
+             + noise( vec3( st*8.0, age ) ) * 0.04
+             + noise( vec3( st*30., age ) ) * 0.015
+             + noise( vec3( st*125.,age ) ) * 0.005;
     
     float w = 0.005;
     

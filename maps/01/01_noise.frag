@@ -16,23 +16,23 @@ uniform float u_control_b;
 
 uniform sampler2D u_tex0;
 
-varying vec2 st;
-
 #pragma include "../../libs/libnoise.frag"
 #pragma include "../../libs/libshapes.frag"
 
 void main(){
 
+    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    
     float ratio = u_resolution.x / u_resolution.y;
-    vec2 str = st;
-    str.x *= ratio;
-    str.y += u_time*0.03;
+    st.x *= ratio;
+    
+    st.y += u_time*0.03;
 
-    float no = noise( vec2( str*1.0 ) ) * 0.34 
-             + noise( vec2( str*2.0 ) ) * 0.6
-             + noise( vec2( str*10. ) ) * 0.04
-             + noise( vec2( str*30. ) ) * 0.01
-             + noise( vec2( str*200.) ) * 0.01;
+    float no = noise( vec2( st*1.0 ) ) * 0.34 
+             + noise( vec2( st*2.0 ) ) * 0.6
+             + noise( vec2( st*10. ) ) * 0.04
+             + noise( vec2( st*30. ) ) * 0.01
+             + noise( vec2( st*200.) ) * 0.01;
    
     float w = 0.01;
     
