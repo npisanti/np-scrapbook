@@ -42,10 +42,10 @@ float glyph( vec2 st, float index ){
     float e0b = step( 0.6666, ra0 );
     g += stroke( circle_sdf( st ), 0.27 - e0b*0.12, 0.06+e0b*0.24 );
 
-    float step = TWO_PI / 12.0;
+    float radstep = TWO_PI / 12.0;
     
     for( int i=0; i<12; ++i){
-        vec2 rt = rotated( st, float(i)*step );
+        vec2 rt = rotated( st, float(i)*radstep );
         float ra1 = rand( vec2( index, i), u_seed );
         float e1a = step( 0.3333, ra1 );    
         float e1b = step( 0.6666, ra1 );    
@@ -78,17 +78,15 @@ float write( vec2 st, float ratio ){
 void main(){
     
     vec2 st = gl_FragCoord.xy/u_resolution;
-	vec2 t = st;
-    t.y = 1.0 - t.y;
+
     float ratio = u_resolution.x / u_resolution.y;
-    t.x *= ratio;
-    //st.y = 1.0 - st.y; // now y is from up to down
+    st.x *= ratio;
 
     // one glyph
     //float alpha = glyph( st, floor(u_time) ); 
     
     // writing
-    float alpha = write( t, ratio );
+    float alpha = write( st, ratio );
     
 	vec3 color = vec3( 1.0 );	
 	gl_FragColor = vec4(color, alpha);
