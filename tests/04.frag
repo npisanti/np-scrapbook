@@ -26,12 +26,16 @@ uniform vec3 u_color_b;
 void main(){
   
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
-
+    float ratio = u_resolution.x / u_resolution.y;
+    
     vec2 nt = st;
     nt.x += noise( vec2( 0.0, u_time) )*0.01 ;   
     nt.y += 0.005;
     
     vec4 z1 = texture2D( u_tex1, nt );
+
+    st.x *= ratio;
+    st.x += (1.0-ratio) * 0.5;
 
     float s = poly_sdf( st, 3 );
     float a = stroke( s, 0.2, 0.1 );
