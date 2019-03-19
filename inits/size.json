@@ -1,8 +1,11 @@
 {
     "config": {
         "canvas": {
-            "width": "300",
-            "height": "1200"
+            "width": "800",
+            "height": "480",
+            "downsample": "2", 
+            "framerate": "60",
+            "show_fps" : "1"
         }
     }
 }
