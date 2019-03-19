@@ -13,8 +13,8 @@ uniform float u_control_b;
 uniform sampler2D u_tex0;
 varying vec2 st;
 
-#pragma include "../../libs/libnoise.frag"
-#pragma include "../../libs/libshapes.frag"
+#pragma include "../libs/libnoise.frag"
+#pragma include "../libs/libshapes.frag"
 
 //uniform vec3 u_color_a;
 //uniform vec3 u_color_b;

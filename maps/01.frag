@@ -16,8 +16,8 @@ uniform float u_control_b;
 
 uniform sampler2D u_tex0;
 
-#pragma include "../../libs/libnoise.frag"
-#pragma include "../../libs/libshapes.frag"
+#pragma include "../libs/libnoise.frag"
+#pragma include "../libs/libshapes.frag"
 
 void main(){
 
