@@ -2,13 +2,13 @@
     "config": {
         "webcam": {
             "ID": "0",
-            "width": "320",
-            "height": "240",
+            "width": "1280",
+            "height": "720",
             "mode": "0"
         },
         "canvas": {
-            "width": "320",
-            "height": "240"
+            "width": "1280",
+            "height": "720"
         }
     }
 }

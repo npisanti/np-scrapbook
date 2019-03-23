@@ -5,7 +5,7 @@
             "height": "480",
             "downsample": "2", 
             "framerate": "60",
-            "show_fps" : "1"
+            "show_fps" : "0"
         }
     }
 }

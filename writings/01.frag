@@ -37,18 +37,22 @@ const float u_speed = 0.32;
 float glyph( vec2 st, float index ){
     float g = 0.0;
     
-    float ra0 = rand( vec2( index, 13.0 ), u_seed );
+    float ra0 = rand( vec2( index, 0.0 ), u_seed );
     float e0 = step( 0.3333, ra0 );    
     float e0b = step( 0.6666, ra0 );
     g += stroke( circle_sdf( st ), 0.27 - e0b*0.12, 0.06+e0b*0.24 );
 
     float radstep = TWO_PI / 12.0;
     
+    float mra1 =  rand( vec2( index, 1.0), u_seed );
+    float mra2 =  rand( vec2( index, 2.0), u_seed );
+    
     for( int i=0; i<12; ++i){
         vec2 rt = rotated( st, float(i)*radstep );
         float ra1 = rand( vec2( index, i), u_seed );
-        float e1a = step( 0.3333, ra1 );    
-        float e1b = step( 0.6666, ra1 );    
+        float mult = pow(2.0, float(i)); // i^2
+        float e1a = step( 0.5, fract( mra1 * mult ) );    
+        float e1b = step( 0.5, fract( mra2 * mult ) );    
         g +=    stroke( rt.x, 0.5, 0.03 ) 
                 * stroke( rt.y, 0.15 + e1b*0.1 , 0.1 + e1b*0.1 )*e1a; 
     }
@@ -68,7 +72,9 @@ float write( vec2 st, float ratio ){
     float timepoint = u_time*u_speed;
     float index = tile.x + tile.y*cols;
     float cursor = floor(fract(timepoint)*max);
+    
     float written = select( index, vec2( 0, cursor ) );
+    
     float page = floor( timepoint ) * max;
     index += page;
     

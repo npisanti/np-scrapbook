@@ -32,6 +32,6 @@ void main (void) {
     
     vec4 feedback = texture2D( u_tex1, vec2(st.x, st.y+0.0025) );
     
-    gl_FragColor = color*0.2+ feedback*0.95;
+    gl_FragColor = color*0.2+ feedback*0.9;
     //gl_FragColor = color;
 }
