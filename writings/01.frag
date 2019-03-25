@@ -19,8 +19,6 @@ float stroke(float x, float d, float w){ float r = step(d,x+w*.5) - step(d,x-w*.
 
 float select( float index, vec2 range ){ float s0 = step( range.x, index ); float s1 = step( index, range.y ); return s0*s1; }
 
-mat2 rotate2d( in float _angle ){ return mat2(cos(_angle),-sin(_angle), sin(_angle),cos(_angle)); }
-vec2 rotated( vec2 _st, in float _angle ){ _st -= 0.5; _st *= rotate2d( _angle ); _st += 0.5; return _st;}
 // ------------------------------------------------------------------
 
 
@@ -46,15 +44,37 @@ float glyph( vec2 st, float index ){
     
     float mra1 =  rand( vec2( index, 1.0), u_seed );
     float mra2 =  rand( vec2( index, 2.0), u_seed );
+
+    vec2 st_off = st-0.5;
     
-    for( int i=0; i<12; ++i){
-        vec2 rt = rotated( st, float(i)*radstep );
-        float ra1 = rand( vec2( index, i), u_seed );
+    for( int i=0; i<6; ++i){
+        
+        float theta = float(i)*radstep;
+        float cos_theta = cos( theta );
+        float sin_theta = sin( theta );
+        
+        mat2 rot0 = mat2( cos_theta, -sin_theta, sin_theta, cos_theta );
+        vec2 rt0 = st_off * rot0;
+        rt0 += 0.5;
+        
         float mult = pow(2.0, float(i)); // i^2
         float e1a = step( 0.5, fract( mra1 * mult ) );    
         float e1b = step( 0.5, fract( mra2 * mult ) );    
-        g +=    stroke( rt.x, 0.5, 0.03 ) 
-                * stroke( rt.y, 0.15 + e1b*0.1 , 0.1 + e1b*0.1 )*e1a; 
+        
+        g +=    stroke( rt0.x, 0.5, 0.03 ) 
+                * stroke( rt0.y, 0.15 + e1b*0.1 , 0.1 + e1b*0.1 )*e1a; 
+
+        mat2 rot6 = mat2( -cos_theta, sin_theta, -sin_theta, -cos_theta );
+        vec2 rt6 = st_off * rot6;
+        rt6 += 0.5;
+        
+        mult = pow(2.0, float(i+6)); // i^2
+        e1a = step( 0.5, fract( mra1 * mult ) );    
+        e1b = step( 0.5, fract( mra2 * mult ) );    
+        
+        g +=    stroke( rt6.x, 0.5, 0.03 ) 
+                * stroke( rt6.y, 0.15 + e1b*0.1 , 0.1 + e1b*0.1 )*e1a; 
+
     }
 
     return g;
