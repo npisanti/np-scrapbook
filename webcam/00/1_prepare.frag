@@ -3,14 +3,14 @@
 precision mediump float;
 #endif
 
-
 uniform vec2 u_resolution;
 uniform float u_time;
 uniform sampler2D u_tex0;
-varying vec2 st;
-
 
 void main (void) {
+
+    vec2 st = gl_FragCoord.xy/u_resolution;
+
     float low = 0.3;
     float high = 0.7;
     
@@ -30,4 +30,7 @@ void main (void) {
     float gate = smoothstep(reduce-blur, reduce, st.x) * smoothstep(1.0-reduce+blur, 1.0-reduce, st.x ) * smoothstep( top-blur, top, st.y);
 
     gl_FragColor = vec4( vec3(1.0), remapped * gate );
+    //gl_FragColor = source;
+    //gl_FragColor = vec4( vec3( st.x), 1.0 );
+    
 }

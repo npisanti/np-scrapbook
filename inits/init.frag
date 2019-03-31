@@ -6,7 +6,6 @@ precision mediump float;
 #define PI 3.14159265359
 #define TWO_PI 6.28318530718
 
-varying vec2 st;
 uniform vec2 u_resolution;
 
 uniform float u_time;
@@ -23,9 +22,14 @@ uniform vec3 u_color_b;
 // ------------------- SHADER ----------------------------------
 void main(){
   
-  //vec4 source = texture2D( u_tex0, st ); // for texture access
-  //gl_FragColor = source;
-  
-  gl_FragColor = vec4( u_control_a, 0.0, 0.0, 1.0 );
+    vec2 st = gl_FragCoord.xy/u_resolution;
+
+    //float ratio = u_resolution.x / u_resolution.y;
+    //st.x *= ratio;
+
+    //vec4 source = texture2D( u_tex0, st ); // for texture access
+    //gl_FragColor = source;
+
+    gl_FragColor = vec4( u_control_a, 0.0, 0.0, 1.0 );
 
 }

@@ -7,8 +7,8 @@ end
 ----------------------------------------------------
 function draw()
     
-    --mg.translate( mg.ratio()*0.5, 0.0 )
-    --mg.center()
+    --lvg.translate( mg.ratio()*0.5, 0.0 )
+    --lvg.center()
 
 end
 
