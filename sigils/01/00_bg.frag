@@ -40,8 +40,8 @@ float rectjit( vec2 st ){
 }
 
 void main(){
-    
     vec2 st = gl_FragCoord.xy/u_resolution.xy;
+    
     st.x *= u_resolution.x / u_resolution.y;
 
     vec2 dt = rotated( st, PI * 0.05 );

@@ -1,0 +1,18 @@
+{
+    "config": {
+        "canvas": {
+            "width": "800",
+            "height": "480",
+            "downsample": "1", 
+            "framerate": "60",
+            "show_fps" : "0", 
+            "do_not_resize" : "0"
+        },
+        "webcam": {
+            "ID": "-1",
+            "width": "640",
+            "height": "480",
+            "mode": "0"
+        }
+    }
+}

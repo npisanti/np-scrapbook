@@ -16,7 +16,6 @@ uniform float u_control_b;
 
 uniform sampler2D u_tex0;
 
-varying vec2 st;
 
 // --------------------------- FUNCTIONS -----------------------------
 
@@ -159,7 +158,8 @@ float noise_fractal(vec3 m) {
 // --------------------------- SHADER --------------------------------
 
 void main(){
-
+    vec2 st = gl_FragCoord.xy/u_resolution;
+    
     float ratio = u_resolution.x / u_resolution.y;
     vec2 str = st;
     str.x *= ratio;

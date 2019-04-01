@@ -9,7 +9,6 @@ precision mediump float;
 uniform vec2 u_resolution;
 
 uniform float u_time;
-uniform sampler2D u_tex0;
 
 uniform float u_control_a;
 uniform float u_control_b;
@@ -17,7 +16,7 @@ uniform vec3 u_color_a;
 uniform vec3 u_color_b;
 
 // ------------------- FUNCTIONS -------------------------------
-#pragma include "../../libs/libshapes.frag"
+#pragma include "../libs/libshapes.frag"
 
 
 // ------------------- SHADER ----------------------------------

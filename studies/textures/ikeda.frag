@@ -10,7 +10,7 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 uniform vec3 u_color_a;
-uniform float u_control;
+uniform float u_control_a;
 
 float rand(vec2 st, float t){
     return fract(sin(dot(st.xy + fract(t*0.0013) ,vec2(12.9898,78.233))) * 43758.5453);
@@ -33,7 +33,7 @@ const float id = 7.0;
 void main(){
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
 
-    float threshold = 1.0-u_control;
+    float threshold = 1.0-u_control_a;
 
 	// for tiling you simply multiply the coordinates for an index
 	slider *= 120.0; // cols

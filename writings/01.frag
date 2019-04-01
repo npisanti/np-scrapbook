@@ -9,7 +9,6 @@ precision mediump float;
 
 uniform vec2 u_resolution;
 uniform float u_time;
-varying vec2 st;
 
 // --------------- condensed functions ------------------------------
 float rand(vec2 st, float t){ return fract(sin(dot(st.xy + fract(t*0.0013) ,vec2(12.9898,78.233))) * 43758.5453); }
@@ -104,16 +103,16 @@ float write( vec2 st, float ratio ){
 
 void main(){
     
-    //vec2 st = gl_FragCoord.xy/u_resolution;
-
+  
+    vec2 st = gl_FragCoord.xy/u_resolution;
+    
     float ratio = u_resolution.x / u_resolution.y;
-    vec2 t = vec2( st.x * ratio, st.y );
-
+    st.x *= ratio;
     // one glyph
     //float alpha = glyph( st, floor(u_time) ); 
     
     // writing
-    float alpha = write( t, ratio );
+    float alpha = write( st, ratio );
     
 	vec3 color = vec3( 1.0 );	
 	gl_FragColor = vec4(color, alpha);

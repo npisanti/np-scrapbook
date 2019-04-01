@@ -14,7 +14,6 @@ uniform vec3 u_color_a;
 
 uniform sampler2D u_tex0;
 
-varying vec2 st;
 
 // --------------------------- FUNCTIONS -----------------------------
 
@@ -41,6 +40,7 @@ float polymoire( vec2 st, int N, float spacing, float fatness, float speed ){
 // --------------------------- SHADER --------------------------------
 
 void main(){
+    vec2 st = gl_FragCoord.xy/u_resolution;
 
     vec4 source = texture2D( u_tex0, st ); // for texture access
 

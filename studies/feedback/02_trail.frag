@@ -11,6 +11,8 @@ uniform sampler2D u_tex1;
 varying vec2 st;
 
 void main (void) {
+    vec2 st = gl_FragCoord.xy/u_resolution;
+    
     vec4 source = texture2D( u_tex0, st );
     vec4 z1 = texture2D( u_tex1, vec2(st.x, st.y+0.01) );
     

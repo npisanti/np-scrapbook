@@ -6,13 +6,13 @@ end
 
 ----------------------------------------------------
 function draw()
-    mg.clear()
+    lvg.clear()
     
-    mg.center()
+    lvg.center()
     
-    mg.begin()
-        mg.circle( lfo.noise(0.3)-0.5, 0.0, 0.1 )
-    mg.close()
+    lvg.begin()
+        lvg.circle( lfo.noise(0.3)-0.5, 0.0, 0.1 )
+    lvg.close()
 end
 
 ----------------------------------------------------

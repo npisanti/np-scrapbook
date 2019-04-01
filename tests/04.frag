@@ -18,8 +18,8 @@ uniform vec3 u_color_a;
 uniform vec3 u_color_b;
 
 // ------------------- FUNCTIONS -------------------------------
-#pragma include "../../libs/libnoise.frag"
-#pragma include "../../libs/libshapes.frag"
+#pragma include "../libs/libnoise.frag"
+#pragma include "../libs/libshapes.frag"
 
 #define GRID 24.0
 // ------------------- SHADER ----------------------------------

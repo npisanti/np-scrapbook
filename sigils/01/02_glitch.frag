@@ -7,12 +7,12 @@ uniform vec2 u_resolution;
 uniform float u_time;
 
 uniform sampler2D u_tex0;
-varying vec2 st;
 
 uniform vec3 u_color_a;
 uniform vec3 u_color_b;
 
 void main (void) {
+    vec2 st = gl_FragCoord.xy/u_resolution;
     
     float offset = step( 0.9, fract(u_time) ) * step( 0.7, fract(u_time*1.27) ) * 0.05;
     

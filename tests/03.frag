@@ -17,7 +17,7 @@ uniform vec3 u_color_a;
 uniform vec3 u_color_b;
 
 // ------------------- FUNCTIONS -------------------------------
-#pragma include "../../libs/librandom.frag"
+#pragma include "../libs/librandom.frag"
 
 #define GRID 24.0
 // ------------------- SHADER ----------------------------------
