@@ -1,0 +1,28 @@
+{
+    "config": {
+        "audio": {
+            "freq_high": "20000",
+            "freq_low": "100",
+            "threshold": "0.3",
+            "to_speed": "0"
+        },
+        "canvas": {
+            "do_not_resize": "0",
+            "downsample": "1",
+            "framerate": "60",
+            "height": "480",
+            "show_fps": "0",
+            "width": "800"
+        },
+        "colors": {
+            "color_A": "255, 255, 255, 255",
+            "color_B": "180, 180, 180, 255"
+        },
+        "webcam": {
+            "ID": "-1",
+            "height": "480",
+            "mode": "0",
+            "width": "640"
+        }
+    }
+}
