@@ -17,11 +17,7 @@ uniform vec3 u_color_a;
 uniform vec3 u_color_b;
 
 // ------------------- FUNCTIONS -------------------------------
-#pragma include "../libs/libshapes.frag"
-//#pragma include "../libs/liblfo.frag"
-//#pragma include "../libs/librandom.frag"
-//#pragma include "../libs/libnoise.frag"
-//#pragma include "../libs/libeasing.frag"
+#pragma include "../libs/liblfo.frag"
 
 // ------------------- SHADER ----------------------------------
 void main(){
@@ -33,7 +29,9 @@ void main(){
 
     //vec4 source = texture2D( u_tex0, st ); // for texture access
     //gl_FragColor = source;
-
-    gl_FragColor = vec4( u_control_a, 0.0, 0.0, 1.0 );
+    float band =  abs( fract( fract(st.x*2.0) + u_time*0.2) * 2.0 -1.0 );
+    
+    //float band = sin( fract( fract(st.x*4.0) + u_time*0.2) * TWO_PI );
+    gl_FragColor = vec4( 1.0, band*0.4, 0.0, 1.0 );
 
 }
