@@ -6,9 +6,7 @@ end
 
 ----------------------------------------------------
 function draw()
-    
-    --lvg.translate( mg.ratio()*0.5, 0.0 )
-    --lvg.center()
+    px.clear()
 
 end
 

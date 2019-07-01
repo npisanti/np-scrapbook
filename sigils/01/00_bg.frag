@@ -13,8 +13,6 @@ uniform vec3 u_color_b;
 #pragma include "../../libs/librandom.frag"
 #pragma include "../../libs/libnoise.frag"
 
-const float aa = 0.005;
-
 float rangrid( vec2 st, float cols, float rows ){
     vec2 grid = floor( vec2(st.x * cols, st.y * rows) );
     float r = rand( grid, u_time );
@@ -69,6 +67,4 @@ void main(){
     
     gl_FragColor = vec4( mix( vec3(0.0), u_color_b, a), t );  
     
-    //gl_FragColor = vec4( u_color_b, a );  
-    //gl_FragColor = vec4( u_color_a, 0.0 );  
 }
