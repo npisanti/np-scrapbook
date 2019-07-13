@@ -2,11 +2,6 @@
 ----------------------------------------------------
 function setup()
 
-    for i=1,3 do 
-        lfo.speed( 0.0013 + i*0.0019, i)
-        lfo.speed( 0.002 + i*0.0017, i+3)
-    end
-    
 end
 
 ----------------------------------------------------
@@ -21,7 +16,7 @@ function draw()
     px.fill()
 
     for i=1,3 do 
-        local m0 = lfo.triangle( i )
+        local m0 = lfo.triangle( 0.13 + i*0.019 )
 
         px.color( 255, m0*m0*255 )
         px.begin()
@@ -36,7 +31,7 @@ function draw()
             px.poly( 0.0, -offset*i, side-stroke, 4 )
         px.finish( true )
         
-        local m1 = lfo.triangle( i+3 ) 
+        local m1 = lfo.triangle( 0.2 + i*0.017 ) 
 
         px.color( 255, m1*m1*255 )
         px.begin()
