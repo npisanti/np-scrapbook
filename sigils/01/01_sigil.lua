@@ -20,30 +20,30 @@ function draw()
 
         px.color( 255, m0*m0*255 )
         px.begin()
-            px.poly( 0.0, offset*i,  side, 4 )
+            px.polypath( 0.0, offset*i,  side, 4 )
             px.next()
-            px.poly( 0.0, offset*i,  side-stroke, 4 )
+            px.polypath( 0.0, offset*i,  side-stroke, 4 )
         px.finish()
         
         px.begin()
-            px.poly( 0.0, -offset*i, side, 4 )
+            px.polypath( 0.0, -offset*i, side, 4 )
             px.next()
-            px.poly( 0.0, -offset*i, side-stroke, 4 )
+            px.polypath( 0.0, -offset*i, side-stroke, 4 )
         px.finish( true )
         
         local m1 = lfo.triangle( 0.2 + i*0.017 ) 
 
         px.color( 255, m1*m1*255 )
         px.begin()
-            px.poly( offset*i, 0, side, 4 )
+            px.polypath( offset*i, 0, side, 4 )
             px.next()
-            px.poly( offset*i, 0, side-stroke, 4 )
+            px.polypath( offset*i, 0, side-stroke, 4 )
         px.finish()
         
         px.begin()
-            px.poly( -offset*i, 0, side, 4 )
+            px.polypath( -offset*i, 0, side, 4 )
             px.next()
-            px.poly( -offset*i, 0, side-stroke, 4 )
+            px.polypath( -offset*i, 0, side-stroke, 4 )
         px.finish( true )
           
     end
