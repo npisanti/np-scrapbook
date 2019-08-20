@@ -6,13 +6,13 @@ end
 
 ----------------------------------------------------
 function draw()
-    lvg.clear()
-    
-    lvg.center()
-    
-    lvg.begin()
-        lvg.circle( lfo.noise(0.3)-0.5, 0.0, 0.1 )
-    lvg.close()
+
+    px.clear()
+        
+    px.color( 255 )
+
+    px.circle( lfo.noise(0.3) * px.width(), px.height() * 0.5, 10  )
+
 end
 
 ----------------------------------------------------
