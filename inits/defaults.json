@@ -7,12 +7,15 @@
             "to_speed": "0"
         },
         "canvas": {
+            "origin_x" : -1, 
+            "origin_y" : -1,
+            "width": "800",
+            "height": "480",
             "do_not_resize": "0",
             "downsample": "1",
             "framerate": "60",
-            "height": "480",
             "show_fps": "0",
-            "width": "800"
+            "decorate_window" : "1"
         },
         "colors": {
             "color_A": "255, 255, 255, 255",
