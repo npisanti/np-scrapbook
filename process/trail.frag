@@ -4,7 +4,7 @@ precision mediump float;
 #endif
 
 
-#pragma include "../../libs/libnoise.frag"
+#pragma include "../libs/libnoise.frag"
 
 uniform vec2 u_resolution;
 uniform float u_time;
