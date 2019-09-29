@@ -5,7 +5,6 @@ precision mediump float;
 
 uniform float u_time;
 uniform vec2 u_resolution;
-
 uniform sampler2D u_tex0;
 
 #pragma include "../libs/libnoise.frag"
@@ -14,22 +13,25 @@ uniform sampler2D u_tex0;
 void main (void) {
     vec2 st = gl_FragCoord.xy/u_resolution;
     
-    float pct = lfo_tri( 0.5 );
+    float u_amount = lfo_tri( 0.25 );
+    u_amount *= u_amount;
+    u_amount *= u_amount;
+    u_amount *= 0.3;
     
-    pct *= pct;
-    pct *= pct;
+    float u_granularity = 30.0;
     
-    pct *= 0.4;
     
-    vec2 pos = vec2(st.x, st.y)*50.0;
-    float nox = noise( vec3(pos, 0.0 ) );
-    float noy = noise( vec3(pos, 1.0 ) );
+    float t = u_time * 0.2;
+    vec2 pos = vec2(st.x, st.y)*u_granularity;
     
-    st.x -= pct * nox;
-    st.y -= pct * noy;
+    float nox = noise( vec3(pos, t ) );
+    float noy = noise( vec3(pos, t+1.) );
+    
+    st.x -= u_amount * nox;
+    st.y -= u_amount * noy;
     
     vec4 source = texture2D( u_tex0, st );
     
     gl_FragColor = source; 
-    // source.a
+
 }

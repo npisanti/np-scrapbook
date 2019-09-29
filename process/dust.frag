@@ -17,7 +17,7 @@ float rand(vec2 st, float t){
 void main (void) {
     vec2 st = gl_FragCoord.xy/u_resolution;
     
-    float pct = lfo_tri( 0.15 );
+    float pct = lfo_tri( 0.35 );
     
     pct *= pct;
     pct *= pct;
@@ -30,7 +30,7 @@ void main (void) {
     float nox = rand( pos, 1.0 ) - 0.5;
     float noy = rand( pos, 2.0 ) - 0.5;
     
-    pct *= 0.4;
+    pct *= 0.15;
     
     st.x -= pct * nox;
     st.y -= pct * noy;
