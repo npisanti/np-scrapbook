@@ -2,6 +2,7 @@
 require "strict"
 
 local folder = "write_alpha"
+local count = 0
 
 ----------------------------------------------------
 function setup()
@@ -9,29 +10,20 @@ function setup()
     px.framerate( 30 )
 end
 
-local count = 0
-
 ----------------------------------------------------
 function draw()
 
-    --px.background( 255, 255, 255, 255 )
     px.clear()
     px.color(255)
     
     png.select( folder )
     if lfo.clock(15) then 
-        if count == 10 then
-            count = 0
-        end
+        png.draw( px.width()/2,  88 * count )  
+        
         count = count + 1 
-        png.draw( px.width()/2, 50 + 70 * count )  
+        if count == 9 then
+            count = 1
+        end
     end
     
 end
-
-----------------------------------------------------
-function exit()
-
-end
-
-

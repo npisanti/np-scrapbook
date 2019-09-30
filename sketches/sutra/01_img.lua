@@ -32,7 +32,7 @@ function draw()
         end
 
         png.select( folder )
-        png.draw( px.width()/4, px.height()/4 )  
+        png.draw( px.width()/4 -10, px.height()/4 -80 )  
     end
 
 

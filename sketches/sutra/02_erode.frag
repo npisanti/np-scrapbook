@@ -22,18 +22,21 @@ void main (void) {
     vec2 pos = vec2(st.x, st.y)*50.0;
     float nox = rand( pos, u_time * 1.2 ) - 0.5;
     float noy = rand( pos, u_time       ) - 0.5;
-    //float nox = rand( pos, 0.0 ) - 0.5;
-    //float noy = rand( pos, 1.0 ) - 0.5;
 
-    float pct = 0.0022;
+
+    float pct = 0.002;
     st.x -= pct * nox;
     st.y -= pct * noy * rat;
+
+    float decay = 0.001;
+    st.y -= decay;
+    st.x -= decay*0.4;
 
     vec4 source = texture2D( u_tex0, st );
 
     vec4 z1 = texture2D( u_tex1, st );
     
-    vec4 color = source;
+    vec4 color = source*0.99;
     
     color.a = min( color.a, 1.0 );
     
