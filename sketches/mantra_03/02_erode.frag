@@ -15,26 +15,25 @@ float rand(vec2 st, float t){
 }
 
 void main (void) {
-
     vec2 st = gl_FragCoord.xy/u_resolution;
     float rat = u_resolution.x / u_resolution.y;
 
+    float nox = rand( st, 0.0 ) - 0.5;
+    float noy = rand( st, 1.0 ) - 0.5;
+
+    float pct = 0.002;
+    st.x -= pct * nox ;
+    st.y -= pct * noy * rat - 0.0025;
+
+    float decay = 0.001;
+    st.y -= decay;
+    st.x -= decay*0.4;
 
     vec4 source = texture2D( u_tex0, st );
 
-    vec2 pos = vec2(st.x, st.y)*50.0;
-
-    float nox = rand( pos, 0.0 ) - 0.5;
-    float noy = rand( pos, 1.0 ) - 0.5;
-
-    float pct = 0.008;
-    st.x -= pct * nox;
-    st.y -= pct * noy * rat; // - 0.002;
-
-
     vec4 z1 = texture2D( u_tex1, st );
     
-    vec4 color = source + z1*0.97;
+    vec4 color = source*0.99;
     
     color.a = min( color.a, 1.0 );
     
