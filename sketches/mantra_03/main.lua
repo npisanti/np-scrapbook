@@ -9,10 +9,10 @@ function setup()
     
     frag.load( "evaporate", "evaporate.frag" )
     
-    px.size( 480, 800 )
+    px.canvas( 480, 800 )
     
     px.begin()
-        px.background( 255, 255, 255, 255 )
+        px.clear( 255, 255, 255, 255 )
     px.finish()
 end
 
@@ -21,6 +21,7 @@ function draw()
     frag.begin( "evaporate" )
         frag.uniform( "u_background", 1.0, 1.0, 1.0 )
         frag.uniform( "u_feedback", 0.99 )
+        frag.uniform( "u_wind", 0.0004 )
     frag.finish()
 
     px.begin()
@@ -35,10 +36,3 @@ function draw()
     px.finish()
     
 end
-
-----------------------------------------------------
-function exit()
-
-end
-
-

@@ -10,10 +10,10 @@ function setup()
     
     frag.load( "dissolve", "dissolve.frag" )
     
-    px.size( 480, 480 )
-    
+    px.canvas( 480, 480 )
+
     px.begin()
-        px.background( 255, 255, 255, 255 )
+        px.clear( 255, 255, 255, 255 )
     px.finish()
 end
 
@@ -23,7 +23,7 @@ function draw()
     
     frag.begin( "dissolve" )
         frag.uniform( "u_background", 1.0, 1.0, 1.0 )
-        frag.uniform( "u_feedback", 0.995 )
+        frag.uniform( "u_feedback", 0.992 )
     frag.finish()
     
     px.begin()    

@@ -10,7 +10,7 @@ function setup()
     
     frag.load( "aura", "aura.frag" )
     
-    px.size( 480, 800 )
+    px.canvas( 480, 800 )
 end
 
 ----------------------------------------------------
