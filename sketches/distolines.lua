@@ -4,20 +4,22 @@ require "strict"
 ----------------------------------------------------
 function setup()
 
+    px.canvas( 480, 480 )
 end
 
 ----------------------------------------------------
 function draw()
-
+    px.begin()
+    
     px.clear()
     px.fill( false )
     
-    local cx = 100
-    local cy = 100
-    local wi = 50
-    local he = 50 
+    local cx = px.width() * 0.5
+    local cy = px.height() * 0.5
+    local wi = 100
+    local he = 100 
     local spacing = 5
-    
+
     px.push()
         distolines( cx, cy, cx-wi, cy-he )
         px.translate( spacing, 0 )
@@ -28,6 +30,7 @@ function draw()
         distolines( cx, cy, cx-wi, cy+he )
     px.pop()
     
+    px.finish()
 end
 
 ----------------------------------------------------
@@ -35,7 +38,7 @@ function distolines( x0, y0, x1, y1 )
 
     local dx = x1 - x0 
     local dy = y1 - y0
-
+    
     px.push()
         px.translate( x0, y0 )
         
