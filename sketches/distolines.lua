@@ -20,15 +20,13 @@ function draw()
     local he = 100 
     local spacing = 5
 
-    px.push()
-        distolines( cx, cy, cx-wi, cy-he )
-        px.translate( spacing, 0 )
-        distolines( cx, cy, cx+wi, cy-he )
-        px.translate( 0, spacing )
-        distolines( cx, cy, cx+wi, cy+he )
-        px.translate( -spacing, 0 )
-        distolines( cx, cy, cx-wi, cy+he )
-    px.pop()
+    distolines( cx, cy, cx-wi, cy-he )
+    px.translate( spacing, 0 )
+    distolines( cx, cy, cx+wi, cy-he )
+    px.translate( 0, spacing )
+    distolines( cx, cy, cx+wi, cy+he )
+    px.translate( -spacing, 0 )
+    distolines( cx, cy, cx-wi, cy+he )
     
     px.finish()
 end
