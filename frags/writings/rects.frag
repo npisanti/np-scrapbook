@@ -7,7 +7,6 @@ precision mediump float;
 
 uniform vec2 u_resolution;
 uniform float u_time;
-uniform vec3 u_color_a;
 
 // --------------- condensed functions ------------------------------
 float rand(vec2 st, float t){ return fract(sin(dot(st.xy + fract(t*0.0013) ,vec2(12.9898,78.233))) * 43758.5453); }
@@ -65,10 +64,10 @@ float glyphs( vec2 st ){
 
 void main(){
 	vec2 st = gl_FragCoord.xy/u_resolution.xy;
-    //st.y = 1.0 - st.y; // now y is from up to down
+    st.y = 1.0 - st.y; // now y is from up to down
 
     float alpha = glyphs( st );
     
-	vec3 color = vec3 (1.0, 0.10, 0.25);	
-	gl_FragColor = vec4(u_color_a, alpha);
+	vec3 color = vec3 (1.0 );	
+	gl_FragColor = vec4(color, alpha);
 }

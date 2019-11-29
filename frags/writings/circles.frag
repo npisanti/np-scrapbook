@@ -103,8 +103,10 @@ float write( vec2 st, float ratio ){
 
 void main(){
     
-  
     vec2 st = gl_FragCoord.xy/u_resolution;
+    
+    // writes up to down 
+    st.y = 1.0 - st.y;
     
     float ratio = u_resolution.x / u_resolution.y;
     st.x *= ratio;

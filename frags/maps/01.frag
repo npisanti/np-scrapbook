@@ -10,14 +10,10 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
 
-uniform vec3 u_color_a;
-uniform vec3 u_color_b;
-uniform float u_control_b;
-
 uniform sampler2D u_tex0;
 
-#pragma include "../libs/libnoise.frag"
-#pragma include "../libs/libshapes.frag"
+#include "../../libs/libnoise.frag"
+#include "../../libs/libshapes.frag"
 
 void main(){
 
@@ -36,13 +32,15 @@ void main(){
    
     float w = 0.01;
     
-    vec3 color = vec3( 0.0 );
-    color += u_color_b * stroke( no, 0.15, w ) * 0.5; 
-    color += u_color_b * stroke( no, 0.30, w ) * 0.75; 
-    color += u_color_b * stroke( no, 0.45, w ); 
-    color += u_color_b * stroke( no, 0.60, w ) * 1.25; 
-    color += u_color_b * stroke( no, 0.75, w ) * 1.5; 
+    vec3 color = vec3( 1.0 );
+    
+    vec3 land = vec3( 0.0 );
+    land += color * stroke( no, 0.15, w ) * 0.5; 
+    land += color * stroke( no, 0.30, w ) * 0.75; 
+    land += color * stroke( no, 0.45, w ); 
+    land += color * stroke( no, 0.60, w ) * 1.25; 
+    land += color * stroke( no, 0.75, w ) * 1.5; 
 
-    gl_FragColor = vec4( color, 1.0 );
+    gl_FragColor = vec4( land, 1.0 );
 
 }

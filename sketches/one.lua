@@ -4,17 +4,16 @@ require "strict"
 ----------------------------------------------------
 function setup()
 
-    px.size( 160*2, 160*2 )
-    
+    px.canvas( 400, 400  )    
 end
 
 ----------------------------------------------------
 function draw()
-
+    px.begin()
     px.clear()
 
-    local cx = px.width() * control_x
-    local cy = px.height() * control_y
+    local cx = px.width() * lfo.noise( 0.12, 0 )
+    local cy = px.height() * lfo.noise( 0.12, 1 )
     px.translate( cx, cy )
 
     px.fill( false )
@@ -33,5 +32,6 @@ function draw()
         px.point( -off, 0 )
         px.pop()
     end
-        
+    
+    px.finish()    
 end
