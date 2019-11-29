@@ -6,12 +6,13 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 uniform float u_time;
-uniform vec3 u_color_a;
-uniform vec3 u_color_b;
 
 #pragma include "../../libs/libshapes.frag"
 #pragma include "../../libs/librandom.frag"
 #pragma include "../../libs/libnoise.frag"
+
+vec3 u_color_a = vec3( 1.0 );
+vec3 u_color_b = vec3( 1.0 );
 
 float rangrid( vec2 st, float cols, float rows ){
     vec2 grid = floor( vec2(st.x * cols, st.y * rows) );

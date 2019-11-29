@@ -8,8 +8,8 @@ uniform float u_time;
 
 uniform sampler2D u_tex0;
 
-uniform vec3 u_color_a;
-uniform vec3 u_color_b;
+vec3 u_color_a = vec3( 1.0, 0.0, 0.0 );
+vec3 u_color_b = vec3( 0.8, 1.0, 1.0 );
 
 void main (void) {
     vec2 st = gl_FragCoord.xy/u_resolution;
