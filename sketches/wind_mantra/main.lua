@@ -8,7 +8,7 @@ function setup()
     png.load( "phrase", "/assets/ink/tests/write_alpha.png")
     
     frag.load( "evaporate", "evaporate.frag" )
-    
+
     px.canvas( 480, 800 )
     
     px.begin()

@@ -30,7 +30,9 @@ void main (void) {
     float pct = 0.02;
     st.x -= pct * nox;
     st.y -= pct * noy * rat;
-
+    
+    st.y += 0.0005;
+    
     vec4 source = texture2D( u_tex0, st );
 
     vec3 color = source.rgb*u_feedback + u_background*(1.0-u_feedback);

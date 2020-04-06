@@ -10,7 +10,8 @@ function setup()
     
     frag.load( "aura", "aura.frag" )
     
-    px.canvas( 480, 800 )
+    px.window( 480, 800 )
+    px.make_layer( "default", 480, 800, 1 )
 end
 
 ----------------------------------------------------
@@ -38,7 +39,7 @@ function draw()
         
         px.color( col )
         png.select( "sigil" )
-        png.draw( px.width()/4, px.height()/4 )  
+        png.draw( px.width()/4, px.height()*1.15 / 4 )  
         
     px.finish()
     

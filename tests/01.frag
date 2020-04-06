@@ -17,7 +17,7 @@ uniform vec3 u_color_a;
 uniform vec3 u_color_b;
 
 // ------------------- FUNCTIONS -------------------------------
-#pragma include "../../libs/libshapes.frag"
+#pragma include "../libs/libshapes.frag"
 
 // ------------------- SHADER ----------------------------------
 void main(){

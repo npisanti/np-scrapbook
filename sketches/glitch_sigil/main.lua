@@ -4,7 +4,6 @@ function setup()
     frag.load( "background", "background.frag" )
     frag.load( "glitch", "glitch.frag" )
     
-
     px.canvas( 480, 800 )
 end
 
