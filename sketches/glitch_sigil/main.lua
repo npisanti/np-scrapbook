@@ -1,14 +1,14 @@
 
 ----------------------------------------------------
-function setup()
-    frag.load( "background", "background.frag" )
-    frag.load( "glitch", "glitch.frag" )
+function reload()
+    frag.load( "background.frag", "background" )
+    frag.load( "glitch.frag", "glitch" )
     
     px.canvas( 480, 800 )
 end
 
 ----------------------------------------------------
-function draw()
+function loop()
 
     px.begin() 
         px.clear( 0, 0, 0, 255 )

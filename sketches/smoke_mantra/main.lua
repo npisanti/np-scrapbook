@@ -4,11 +4,11 @@ require "strict"
 local count = 1
 
 ----------------------------------------------------
-function setup()
+function reload()
     
-    png.load( "phrase", "/assets/ink/tests/write_alpha.png")
+    png.load( "/assets/ink/tests/write_alpha.png",  "phrase" )
     
-    frag.load( "dissolve", "dissolve.frag" )
+    frag.load(  "dissolve.frag", "dissolve" )
     
     px.canvas( 480, 480 )
 
@@ -19,7 +19,7 @@ end
 
 
 ----------------------------------------------------
-function draw()
+function loop()
     
     frag.begin( "dissolve" )
         frag.uniform( "u_background", 1.0, 1.0, 1.0 )

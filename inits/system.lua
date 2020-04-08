@@ -1,6 +1,6 @@
 
 ----------------------------------------------------
-function setup()
+function reload()
 
     -- execyting bash command from pipe
     local handle = io.popen( "figlet 'hello world' " )
@@ -11,7 +11,7 @@ function setup()
 end
 
 ----------------------------------------------------
-function draw()
+function loop()
     
 end
 

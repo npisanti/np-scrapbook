@@ -2,13 +2,13 @@
 require "strict"
 
 ----------------------------------------------------
-function setup()
+function reload()
 
     px.canvas( 480, 480 )
 end
 
 ----------------------------------------------------
-function draw()
+function loop()
     px.begin()
     
     px.clear()

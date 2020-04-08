@@ -15,3 +15,12 @@ function loop()
 
     px.finish()
 end
+
+----------------------------------------------------
+function key_pressed( key, pressed )
+    if pressed then 
+        print "pressed"
+    else
+        print "released"
+    end
+end

@@ -5,17 +5,17 @@ local count = 0
 local col = 255;
 
 ----------------------------------------------------
-function setup()
-    png.load( "sigil", "/assets/ink/tests/sigil_alpha.png")
+function reload()
+    png.load( "/assets/ink/tests/sigil_alpha.png", "sigil" )
     
-    frag.load( "aura", "aura.frag" )
+    frag.load( "aura.frag", "aura" )
     
     px.window( 480, 800 )
     px.make_layer( "default", 480, 800, 1 )
 end
 
 ----------------------------------------------------
-function draw()
+function loop()
 
     frag.begin( "aura" )
         frag.uniform( "u_background", 0.0, 0.0, 0.0 )

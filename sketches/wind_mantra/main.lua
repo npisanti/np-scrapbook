@@ -4,10 +4,10 @@ require "strict"
 local count = 0
 
 ----------------------------------------------------
-function setup()
-    png.load( "phrase", "/assets/ink/tests/write_alpha.png")
+function reload()
+    png.load( "/assets/ink/tests/write_alpha.png", "phrase" )
     
-    frag.load( "evaporate", "evaporate.frag" )
+    frag.load( "evaporate.frag", "evaporate" )
 
     px.canvas( 480, 800 )
     
@@ -17,7 +17,7 @@ function setup()
 end
 
 ----------------------------------------------------
-function draw()
+function loop()
     frag.begin( "evaporate" )
         frag.uniform( "u_background", 1.0, 1.0, 1.0 )
         frag.uniform( "u_feedback", 0.99 )
@@ -34,5 +34,4 @@ function draw()
             png.draw( px.width()/4, px.height()/4 )  
         end
     px.finish()
-    
 end

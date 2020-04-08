@@ -2,7 +2,7 @@
 require "strict"
 
 ----------------------------------------------------
-function setup()
+function reload()
     osc.setup_receiver( 4444 )
     osc.setup_sender( "tester", "localhost", 12345 )
 end
