@@ -34,7 +34,7 @@ function loop()
 	png.select( "input" )
 	png.mode_corner() 
 
-	px.layer("cut")
+	px.select("cut")
 	px.begin()
 		px.color( 255 )
 		--px.clear( 255, 0, 0, 255 )
@@ -47,7 +47,7 @@ function loop()
         frag.uniform( "u_high", threshold + smooth )
     frag.finish()
 
-	px.layer("image")
+	px.select("image")
 	px.begin()
 		px.clear( 0, 0, 0, 0 )
 		px.push()
@@ -64,8 +64,6 @@ function loop()
 		px.pipe( "cut" )
 		overlay( 0, 0, tilew, tileh )
 	px.finish()	
-
-
 end
 
 function overlay( x, y, w, h )
