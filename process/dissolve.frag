@@ -13,13 +13,8 @@ uniform sampler2D u_tex0;
 void main (void) {
     vec2 st = gl_FragCoord.xy/u_resolution;
     
-    float u_amount = lfo_tri( 0.25 );
-    u_amount *= u_amount;
-    u_amount *= u_amount;
-    u_amount *= 0.3;
-    
+	float u_amount = 0.0001;
     float u_granularity = 30.0;
-    
     
     float t = u_time * 0.2;
     vec2 pos = vec2(st.x, st.y)*u_granularity;

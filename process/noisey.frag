@@ -19,8 +19,8 @@ void main (void) {
     pct *= pct;
     pct *= pct;
     
-    float no = noise( vec2(st.x, st.y*60.0) );
-    st.x -= pct * no;
+    float no = noise( vec2(st.y, st.x*24.0) );
+    st.y -= pct * no * 0.1;
     
     vec4 source = texture2D( u_tex0, st );
     

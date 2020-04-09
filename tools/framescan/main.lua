@@ -1,12 +1,12 @@
 
 require "strict"
 
-local tilew = 150
-local tileh = 150
+local tilew = 400
+local tileh = 100
 
 local scale = 0.75
 
-local threshold = 0.1
+local threshold = 0.2
 local smooth = 0.02
 
 local camw = 1280 
