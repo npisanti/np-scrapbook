@@ -1,2 +1,5 @@
 
 scraps/*
+tools/*/input/*
+tools/*/output/*
+tools/*/output*
