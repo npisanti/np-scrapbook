@@ -100,7 +100,7 @@ function key_pressed( key, pressed )
 		elseif key == 115 then -- shift + S
 			cy = cy+25		
 		elseif key == 99 or key == 67 or key == 32 then -- C or spacebar 
-			local filename = "tiles/output_"..tostring(numsaved)..".png"
+			local filename = "output/frame_"..tostring(numsaved)..".png"
 			px.save( filename, "cut" )
 			numsaved = numsaved + 1
 			print( filename )
