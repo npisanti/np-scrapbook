@@ -18,6 +18,8 @@ end
 
 ----------------------------------------------------
 function loop()
+    frag.apply( "process" )
+
 	png.select( "tests" );
 
 	if lfo.clock( 60 ) then 
@@ -38,7 +40,6 @@ function loop()
 		end 
 	end 
 
-    frag.apply( "process" )
 end
 
 ----------------------------------------------------

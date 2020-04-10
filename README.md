@@ -1,6 +1,6 @@
 np-scrapbook
 =====================================
-scrapbook for my creative coding visual scripts, both GLSL fragment shaders and lua scripts, you need [miscela](https://github.com/npisanti/np-miscela) to run them.
+scrapbook for my creative coding visual scripts, both GLSL fragment shaders and lua scripts, you need [pixelscript](https://github.com/npisanti/np-pixelscript) to run them.
 
 memo to make gifs:
 ```console

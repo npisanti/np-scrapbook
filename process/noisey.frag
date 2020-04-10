@@ -14,11 +14,8 @@ uniform sampler2D u_tex0;
 void main (void) {
     vec2 st = gl_FragCoord.xy/u_resolution;
     
-    float pct = lfo_tri( 0.25 );
-    
-    pct *= pct;
-    pct *= pct;
-    
+	float pct = 0.01;
+ 	   
     float no = noise( vec2(st.y, st.x*24.0) );
     st.y -= pct * no * 0.1;
     
