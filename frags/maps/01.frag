@@ -12,8 +12,8 @@ uniform float u_time;
 
 uniform sampler2D u_tex0;
 
-#include "../../libs/libnoise.frag"
-#include "../../libs/libshapes.frag"
+#pragma include "../../libs/libnoise.frag"
+#pragma include "../../libs/libshapes.frag"
 
 void main(){
 

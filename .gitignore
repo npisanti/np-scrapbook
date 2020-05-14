@@ -3,3 +3,7 @@ scraps/*
 tools/*/input/*
 tools/*/output/*
 tools/*/output*
+
+c/**/bin/*
+c/**/src/**/*.d
+c/**/src/**/*.o
