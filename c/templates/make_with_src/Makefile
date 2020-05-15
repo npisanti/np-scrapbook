@@ -1,4 +1,5 @@
 
+# this is a lazy generic makefile 
 # mostly from : 
 # https://spin.atomicobject.com/2016/08/26/makefile-c-projects/
 
@@ -11,6 +12,9 @@ CFLAGS += -Wall -Wpedantic -Wextra -Wwrite-strings
 CFLAGS += -Wconversion -Wshadow -Wstrict-prototypes
 CFLAGS += -Werror=implicit-function-declaration -Werror=implicit-int
 CFLAGS += -Werror=incompatible-pointer-types -Werror=int-conversion
+
+# links for system libraries, for example liblo
+# CFLAGS += -llo
 
 SRCS := $(shell find $(SRC_DIRS) -name *.cpp -or -name *.c -or -name *.s)
 OBJS := $(addsuffix .o,$(basename $(SRCS)))
