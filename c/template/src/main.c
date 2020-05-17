@@ -1,8 +1,8 @@
 
 #include <stdio.h>
 
-int main( void )
+int main(void)
 {
 	printf("hello compiler\n");
-	return 0;	
+	return 0;
 }

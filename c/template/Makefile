@@ -45,3 +45,6 @@ install: all
 clean:
 	$(RM) $(TARGET) $(OBJS) $(DEPS)
 	
+format:
+	clang-format-8 -i $(SRCS)
+	
